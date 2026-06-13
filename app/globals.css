@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-base text-ink font-sans antialiased;
+    /* Very subtle vignette so the page isn't a flat slab of black. */
+    background-image: radial-gradient(
+      1200px 600px at 50% -10%,
+      rgba(127, 209, 222, 0.05),
+      transparent 70%
+    );
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: rgba(127, 209, 222, 0.22);
+    color: #ffffff;
+  }
+
+  /* Slim, unobtrusive scrollbar. */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #23262e;
+    border-radius: 9999px;
+    border: 2px solid #0c0d10;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2f333d;
+  }
+}
+
+@layer components {
+  /* Centered content column shared by every section. */
+  .container-page {
+    @apply mx-auto w-full max-w-5xl px-6 sm:px-8;
+  }
+
+  /* Small monospace eyebrow label used above section headings. */
+  .eyebrow {
+    @apply font-mono text-xs uppercase tracking-[0.2em] text-accent/80;
+  }
+
+  /* Gentle card surface. */
+  .card {
+    @apply rounded-xl border border-line bg-base-card/70 backdrop-blur-sm;
+  }
+
+  /* Subtle pill / tag. */
+  .tag {
+    @apply inline-flex items-center rounded-full border border-line bg-base-soft px-2.5 py-1 font-mono text-xs text-ink-muted;
+  }
+
+  /* Focus ring that matches the minimal accent. */
+  .focusable {
+    @apply outline-none focus-visible:ring-2 focus-visible:ring-accent/60 focus-visible:ring-offset-2 focus-visible:ring-offset-base;
+  }
+}
+
+/* Respect users who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
