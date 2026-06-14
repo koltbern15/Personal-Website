@@ -70,7 +70,7 @@ export type SkillGroup = {
 
 export const profile: Profile = {
   name: "Kolton Bernhardt",
-  role: "Systems Analyst — Microsoft 365, Infrastructure & Identity",
+  role: "Senior Systems Analyst — Microsoft 365, Infrastructure & Identity",
   tagline:
     "I administer and secure identity, endpoints, and infrastructure across regulated banking and mission-critical military environments.",
   summary:
