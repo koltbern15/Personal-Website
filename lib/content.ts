@@ -80,7 +80,7 @@ export const profile: Profile = {
   phone: "(419) 612-2791",
   availability: "Open to Systems / Identity / Infrastructure roles",
   clearance: "Active U.S. Secret Security Clearance",
-  siteUrl: "https://koltonbernhardt.com",
+  siteUrl: "https://personal-website-ruby-three-24.vercel.app",
   resumeUrl: "/Kolton_Bernhardt_Resume_2026.pdf",
   socials: [
     {
